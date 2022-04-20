@@ -1629,6 +1629,14 @@ code {
     justify-content: space-between
 }
 
+.SignIn_form__ZAIHo>.fu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0%;
+    height: 0%;
+    justify-content: space-between
+}
+
 .SignIn_btn_gold__YVLeP {
     background-color: #ffba33!important;
     border-radius: 10px!important;

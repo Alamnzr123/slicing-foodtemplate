@@ -24,7 +24,7 @@ const ForgotPassword = () => {
                 <br />
                 <p> to send your password resend</p>
               </p>
-              <div className="fp">
+              <div className="fu">
                 <div className="InputAuth_box__SHTUc">
                   <label className="form-label" for="email">
                     Email
