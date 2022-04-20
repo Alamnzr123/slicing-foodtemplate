@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Gambar1 from "../Assets/logo.svg"
+import {Link} from 'react-router-dom';
 
 const ForgotPassword = () => {
   return (
@@ -38,12 +39,14 @@ const ForgotPassword = () => {
                     required=""
                   />
                 </div>
+                <Link to='/resetpasscode'>
                 <button
                   className="btn SignIn_btn_gold__YVLeP"
                   type="submit"
                 >
                   Send Mail
                 </button>
+                </Link>
               </div>
             </form>
           </div>

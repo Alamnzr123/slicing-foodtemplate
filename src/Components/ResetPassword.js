@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Gambar1 from "../Assets/logo.svg"
-
+import {Link} from 'react-router-dom';
 const ResetPassword = () => {
   return (
     <div className="row m-0 Auth_upper__6LgZK">
@@ -21,7 +21,7 @@ const ResetPassword = () => {
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">New Password</label><input className="form-control" placeholder="Enter your password" type="password" name="password" id="password" required=""/></div>
                     <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="checkbox" name="checkbox" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label></div>
 
-                    <button className="btn SignIn_btn_gold__YVLeP" type="submit">Reset Password</button>
+                  <Link to='/'><button className="btn SignIn_btn_gold__YVLeP" type="submit">Reset Password</button></Link>
                 </div>
             </form>
         </div>

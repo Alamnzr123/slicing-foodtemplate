@@ -24,9 +24,9 @@ const Login = () => {
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">Password</label><input className="form-control" placeholder="Enter your password" type="password" name="password" id="password" required=""/></div>
                     <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="checkbox" name="checkbox" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label></div>
 
-                    <button className="btn SignIn_btn_gold__YVLeP" type="submit">Login</button>
-                    <p style={{ textAlign: 'right' }}>Forgot Password ?</p>
-                    <p style={{textAlign: 'center'}}>Don't have an account? Sign Up</p></div>
+                    <Link to='/home'><button className="btn SignIn_btn_gold__YVLeP" type="submit">Login</button></Link>
+                    <Link to='/forgotpass'><p style={{ textAlign: 'right' }}>Forgot Password ?</p></Link>
+                    <Link to='/register'><p style={{textAlign: 'center'}}>Don't have an account? Sign Up</p></Link></div>
             </form>
         </div>
     </div>

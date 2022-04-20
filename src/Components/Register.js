@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Gambar1 from "../Assets/logo.svg"
+import {Link} from 'react-router-dom';
 
 const Register = () => {
         return (
@@ -24,8 +25,8 @@ const Register = () => {
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">New Password</label><input className="form-control" placeholder="New password" type="password" name="password" id="password" required=""/></div>
                             <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="checkbox" name="login" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label><br/></div>
         
-                            <button className="btn SignIn_btn_gold__YVLeP" type="submit">Register Account</button>
-                            <p style={{textAlign: 'center'}}>Already have an account? Log in Here.</p></div>
+                           <Link to='/home'><button className="btn SignIn_btn_gold__YVLeP" type="submit">Register Account</button></Link>
+                            <Link to='/'><p style={{textAlign: 'center'}}>Already have an account? Log in Here.</p></Link></div>
                     </form>
                 </div>
             </div>

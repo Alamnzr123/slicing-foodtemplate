@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Gambar1 from "../Assets/4da51338c06dd21688b82eae3bc9dfa6.jpg";
 import Gambar2 from "../Assets/c08f710828e1d2aacf71af8c92583062.png";
+import {Link} from 'react-router-dom';
 
 const RecipeDetail = () => {
   return (
@@ -33,21 +34,21 @@ const RecipeDetail = () => {
         </ol>
         <h1 className="text_videostep">Video Step</h1>
         <div className="Rectangle314_detail"></div>
-        <div className="play_vector_main">
+        <Link to='/videorecipe'><div className="play_vector_main">
           <i className="vector_play"></i>
-        </div>
+        </div></Link>
         <div className="Rectangle317_detail"></div>
-        <div className="play_vector_main2">
+        <Link to='/videorecipe'><div className="play_vector_main2">
           <i className="vector_play2"></i>
-        </div>
+        </div></Link>
         <div className="Rectangle318_detail"></div>
-        <div className="play_vector_main3">
+        <Link to='/videorecipe'><div className="play_vector_main3">
           <i className="vector_play3"></i>
-        </div>
+        </div></Link>
         <div className="Rectangle319_detail"></div>
-        <div className="play_vector_main4">
+        <Link to='/videorecipe'><div className="play_vector_main4">
           <i className="vector_play4"></i>
-        </div>
+        </div></Link>
         <texarea className="Rectangle331_detail">Comment:</texarea>
         <button className="Rectangle27_detail">Send</button>
         <h1 className="text_comment_detail">Comment</h1>

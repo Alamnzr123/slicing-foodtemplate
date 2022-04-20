@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import {Link} from 'react-router-dom';
 import Gambar1 from "../Assets/52207741d95649c4cb58a57ba663027f.jpg";
 import Gambar2 from "../Assets/c2792cef25a0bfa97a2bd8c65b80f9c5.jpg";
 import Gambar3 from "../Assets/572da9a89bc5f8fe0da12c9a18c352e7.jpg";
@@ -13,7 +14,7 @@ const Home = () => {
   return (
     <div className="Slider">
       <div className="Rectangle2"></div>
-      <div className="Login">Login</div>
+      <Link to='/profile'><div className="Login">Login</div></Link>
       <Navbar />
       <div className="Ellipse1">
         <i className="Usericon"></i>
@@ -41,7 +42,7 @@ const Home = () => {
           hurry? That’s right!
         </p>
         <div className="rectangle_28"></div>
-        <div className="text_learnmore">Learn More</div>
+        <Link to='/recipedetail'><div className="text_learnmore">Learn More</div></Link>
         <div className="Rectangle309"></div>
         <div>
           <img src={Gambar1} className="Rectangle313" alt="Gambar1" />
@@ -64,7 +65,7 @@ const Home = () => {
           hurry? That’s right!
         </div>
         <div className="rectangle28"></div>
-        <div className="text_learn2">Learn More</div>
+        <Link to='/recipedetail'><div className="text_learn2">Learn More</div></Link>
       </section>
 
       <section>

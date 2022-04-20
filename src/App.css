@@ -1439,6 +1439,10 @@ code {
     color: #ffba33!important
 }
 
+p:hover {
+    color: #ffba33!important;
+}
+
 .InputAuth_box__SHTUc>label {
     color: #4f5665;
     cursor: pointer;
