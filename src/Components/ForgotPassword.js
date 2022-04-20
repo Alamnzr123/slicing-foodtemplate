@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Gambar1 from "../Assets/logo.svg"
 
 const ForgotPassword = () => {
   return (
@@ -6,6 +7,9 @@ const ForgotPassword = () => {
       <div className="row m-0 Auth_upper__6LgZK">
         <div className="col-md-6 Auth_bg__o9fLW">
           <div className="mask_bg"></div>
+          <div className="background_login_logo">
+        <img src={Gambar1} />
+      </div>
         </div>
         <div className="col-md-6 px-0">
           <nav className="navbar NavAuth_wrapper__PcJEB">
@@ -35,7 +39,7 @@ const ForgotPassword = () => {
                   />
                 </div>
                 <button
-                  className="btn SignIn_btn_gold__YVLeP disabled"
+                  className="btn SignIn_btn_gold__YVLeP"
                   type="submit"
                 >
                   Send Mail

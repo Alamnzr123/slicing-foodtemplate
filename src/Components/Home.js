@@ -23,7 +23,7 @@ const Home = () => {
       <div className="Rectangle3">
         <i className="Vector"></i>
         <input
-          type="text"
+          type="search"
           className="text-searchrestaurant"
           placeholder="Search restaurant, food"
         />
@@ -31,7 +31,6 @@ const Home = () => {
       <h1 className="DiscoverRecipe">
         Discover Recipe <br />& Delicious Food
       </h1>
-
       <section className="fooditem">
         <h1 className="textpopular">Popular For You !</h1>
         <div className="rectangle6"></div>

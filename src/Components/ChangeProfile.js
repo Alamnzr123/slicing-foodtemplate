@@ -4,9 +4,10 @@ import Footer from "./Footer";
 import Gambar1 from "../Assets/4662c85cb7661f579e2c9baff0ce5fdc.png";
 import Gambar2 from "../Assets/cfef9bb1fc6e0bef50d5c8ef7a6cdff6.jpg";
 import Gambar3 from "../Assets/65940ba73f12f048d870dfa487a052df.jpg";
+import Logopencil from "../Assets/logo_pencil.svg";
 import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 
-const Profile = () => {
+const ChangeProfile = () => {
   const [activeTab, setActiveTab] = useState("1");
   return (
     <div>
@@ -16,6 +17,14 @@ const Profile = () => {
           <img className="ellipse127" src={Gambar1} alt="Gambar1" />
         </div>
         <h1 className="text_garneta">Garneta Sharina</h1>
+        <div className="logo_pencil">
+            <img src={Logopencil} />
+        </div>
+        <div className="Rectangle70_btn">
+            <button className="btn_down">Change Photo Profile</button>
+            <br/>
+            <button className="btn_down">Change Password</button>
+        </div>
         <div className="line18"></div>
         <Footer />
       </section>
@@ -103,4 +112,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ChangeProfile;

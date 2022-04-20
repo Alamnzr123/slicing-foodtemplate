@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Gambar1 from "../Assets/logo.svg"
 
 const Register = () => {
         return (
             <div className="row m-0 Auth_upper__6LgZK">
             <div className="col-md-6 Auth_bg__o9fLW_Register">
-              <div className="mask_bg"></div>
+              <div className="mask_bg_register"></div>
+              <div className="background_register_logo">
+                <img  src={Gambar1}/>
+            </div>
             </div>
             <div className="col-md-6 px-0">
                 <nav className="navbar NavAuth_wrapper__PcJEB">
@@ -18,9 +22,9 @@ const Register = () => {
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">Phone Number</label><input className="form-control" placeholder="08xxxxxxxx" type="number" name="phone" id="phone" required=""/></div>
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">Create New Password</label><input className="form-control" placeholder="Create your password" type="password" name="password" id="password" required=""/></div>
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">New Password</label><input className="form-control" placeholder="New password" type="password" name="password" id="password" required=""/></div>
-                            <div className="InputAuth_box__SHTUc"><input type="checkbox" id="vehicle1" name="login" value="login"/><label for="vehicle1"> I Aggree to term & Conditions</label><br/></div>
+                            <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="checkbox" name="login" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label><br/></div>
         
-                            <button className="btn SignIn_btn_gold__YVLeP disabled" type="submit">Register Account</button>
+                            <button className="btn SignIn_btn_gold__YVLeP" type="submit">Register Account</button>
                             <p style={{textAlign: 'center'}}>Already have an account? Log in Here.</p></div>
                     </form>
                 </div>
