@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="Slider">
       <div className="Rectangle2"></div>
-      <Link to='/profile'><div className="Login">Login</div></Link>
+      <Link to='/'><div className="Login">Login</div></Link>
       <Navbar />
       <div className="Ellipse1">
         <i className="Usericon"></i>
