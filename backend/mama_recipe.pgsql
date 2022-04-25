@@ -93,16 +93,13 @@ ALTER TABLE public.saved_recipes OWNER TO postgres;
 CREATE TABLE public.users (
     id integer NOT NULL,
     name character varying(255),
-    email character varying(20),
-    password character varying(20),
-    phone character varying(20),
-    level integer,
-    is_active integer,
-    token character varying(255),
+    email character varying(255),
+    password character varying(255),
+    phone character varying(255),
     photo character varying(255),
-    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    updated_at timestamp without time zone,
-    deleted_at timestamp without time zone
+    level integer,
+    is_verified integer,
+    is_active integer
 );
 
 
@@ -144,7 +141,7 @@ COPY public.saved_recipes (id, user_id, recipe_id, created_at) FROM stdin;
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.users (id, name, email, password, phone, level, is_active, token, photo, created_at, updated_at, deleted_at) FROM stdin;
+COPY public.users (id, name, email, password, phone, photo, level, is_verified, is_active) FROM stdin;
 \.
 
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import {Link} from 'react-router-dom';
 import Gambar1 from "../Assets/52207741d95649c4cb58a57ba663027f.jpg";
 import Gambar2 from "../Assets/c2792cef25a0bfa97a2bd8c65b80f9c5.jpg";
 import Gambar3 from "../Assets/572da9a89bc5f8fe0da12c9a18c352e7.jpg";
@@ -9,16 +8,54 @@ import Gambar5 from "../Assets/7c36ec9fa871caac4eb5b3658eea9aaa.jpg";
 import Gambar6 from "../Assets/19713936f65f2db089da584640f4b823.jpg";
 import Gambar7 from "../Assets/ec253e0e662a4e3aa070cee5202021e3.jpg";
 import Gambar8 from "../Assets/bb6555764d018e0687640abdfde17ba9.jpg";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import axios from "axios"
 
 const Home = () => {
+  const [users, setUsers] = useState([])
+  const [isLoading, setisLoading] = useState(true)
+  const [isError, setisError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const [query] = useSearchParams()
+  const search = query.get("search")
+  useEffect(() => {
+      axios.get("http://localhost:3001/users")
+      .then((response) => {
+          // console.log(response.data)
+          setUsers(response.data)
+          setisLoading(false)
+      })
+      .catch((err) => {
+          console.log(err)
+          setisError(true)
+          setErrorMessage(err)
+      })
+  }, [])
+
   return (
     <div className="Slider">
       <div className="Rectangle2"></div>
-      <Link to='/'><div className="Login">Login</div></Link>
+      <Link to='/login'><div className="Login">Login</div></Link>
       <Navbar />
       <div className="Ellipse1">
         <i className="Usericon"></i>
       </div>
+
+      {
+        isLoading ? (
+            <div>Loading..</div>
+        ) : isError ? (
+            <div>{errorMessage}</div>
+        ) : (users.map((e,i) => {
+            return(
+                <div key={i}>
+                    {e.name}
+                </div>
+            )
+        }))
+    }
 
       <div className="LandingPage_gambar1"></div>
       <div className="Rectangle3">

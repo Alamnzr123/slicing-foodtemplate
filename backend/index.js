@@ -1,17 +1,23 @@
-//import express
-const express = require('express');
-//import bodyparser
-const bodyParser = require('body-parser');
-//use route selalu gunakan dibawah body-parser atau module yang lain
-const useRoute = require('./src/router/user.router')
+require('dotenv').config()
+const bodyParser = require('body-parser')
+const express = require('express')
+const helmet = require('helmet')
+const xss = require('xss-clean')
+const cors = require('cors')
+const userRoute = require('./src/router/user.route')
+const authRoute = require('./src/router/auth.route')
 
-//deklarasi express.js
-const app = express();
+const app = express()
+app.use(cors())
+app.use(helmet({
+  crossOriginResourcePolicy: false
+}))
+app.use(xss())
 app.use(bodyParser.json())
-app.use(useRoute)
-
-
-//run express
-app.listen(3001, () => {
-    console.log('listening on PORT 3001')
+app.use(authRoute)
+app.use(userRoute)
+app.use(express.static('public'))
+const serverPort = process.env.SERVER_PORT
+app.listen(serverPort, () => {
+  console.log(`Service running on port ${serverPort}`)
 })
