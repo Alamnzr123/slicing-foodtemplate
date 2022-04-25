@@ -4,12 +4,13 @@ const { success, failed, successWithToken } = require('../helper/response')
 const jwtToken = require('../helper/generateToken')
 const authController = {
   register: (req, res) => {
+
     try {
       // let photo = req.file.filename
       // if (!photo) {
       //   photo = null
       // }
-      const { name, email, password, phone, photo } = req.body
+      const { name, email, password, phone } = req.body
       if (!name) {
         throw Error('Nama harus diisi') // validation
       }
@@ -32,8 +33,7 @@ const authController = {
                 name,
                 email: email.toLowerCase(),
                 password: hash,
-                phone,
-                photo
+                phone
               }
               authModel.register(data) // calling model to register data
                 .then((result) => {

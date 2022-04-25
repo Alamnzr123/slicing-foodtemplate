@@ -1,6 +1,5 @@
 const userModel = require('../models/users.models')
 const { success, failed } = require('../helper/response')
-
 const userController = {
   showAllUser: async (req, res) => {
     try {
@@ -90,9 +89,6 @@ const userController = {
           } else {
             failed(res, 'id not found', 'error', 'data tidak ditemukan')
           }
-        })
-        .catch((err) => {
-          failed(res, err, 'error', 'an error has occured')
         })
     } catch (err) {
       failed(res, null, 'error', err.message)

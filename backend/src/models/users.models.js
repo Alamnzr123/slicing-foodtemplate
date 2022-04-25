@@ -35,9 +35,9 @@ const userModel = {
       })
     })
   },
-  register: (name, email, password, phone) => {
+  register: (name, email, password, phone, photo) => {
     return new Promise((resolve, reject) => {
-      db.query('INSERT INTO users (name, email, password, phone) VALUES ($1, $2, $3, $4)', [name, email, password, phone], (err, result) => {
+      db.query('INSERT INTO users (name, email, password, phone, photo) VALUES ($1, $2, $3, $4, $5)', [name, email, password, phone, photo], (err, result) => {
         if (err) {
           reject(err)
         } else {
