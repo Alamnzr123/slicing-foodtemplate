@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 
 const ForgotPassword = () => {
   return (
+    
+    <p></p>
+    
     <div>
       <div className="row m-0 Auth_upper__6LgZK">
         <div className="col-md-6 Auth_bg__o9fLW">

@@ -35,6 +35,10 @@ const Home = () => {
   }, [])
 
   return (
+
+    
+    <p></p>
+    
     <div className="Slider">
       <div className="Rectangle2"></div>
       <Link to='/login'><div className="Login">Login</div></Link>
