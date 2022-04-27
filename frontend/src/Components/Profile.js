@@ -9,9 +9,6 @@ import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("1");
   return (
-    
-    <p></p>
-    
     <div>
       <ListNavbar />
       <section>

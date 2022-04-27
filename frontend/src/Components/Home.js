@@ -36,9 +36,6 @@ const Home = () => {
 
   return (
 
-    
-    <p></p>
-    
     <div className="Slider">
       <div className="Rectangle2"></div>
       <Link to='/login'><div className="Login">Login</div></Link>
@@ -46,20 +43,6 @@ const Home = () => {
       <div className="Ellipse1">
         <i className="Usericon"></i>
       </div>
-
-      {
-        isLoading ? (
-            <div>Loading..</div>
-        ) : isError ? (
-            <div>{errorMessage}</div>
-        ) : (users.map((e,i) => {
-            return(
-                <div key={i}>
-                    {e.name}
-                </div>
-            )
-        }))
-    }
 
       <div className="LandingPage_gambar1"></div>
       <div className="Rectangle3">
