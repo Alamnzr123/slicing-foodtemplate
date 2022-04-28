@@ -7,6 +7,7 @@ const { isVerified } = require('../middleware/isVerified')
 const upload = require('../middleware/upload')
 
 router
+  .get('/addrecipe', jwtAuth, isVerified, isCustomer, updateRecipe)
   .post('/insert/recipe', jwtAuth, isVerified, isCustomer, upload, createRecipe) // For create a new recipe
   .get('/list/recipe', jwtAuth, isVerified, recipeList) // For showing recipe
   .get('/show/myrecipe', jwtAuth, isVerified, isCustomer, myRecipe) // For show your own recipe

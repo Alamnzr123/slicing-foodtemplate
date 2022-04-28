@@ -3,7 +3,6 @@ const path = require('path')
 const { failed } = require('../helper/response')
 
 // management file
-const maxSize = 2 * 1024 * 1024
 const multerUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
@@ -14,21 +13,7 @@ const multerUpload = multer({
       const filename = Date.now() + '' + ext
       cb(null, filename)
     }
-  }),
-  fileFilter: (req, file, cb) => {
-    const ext = path.extname(file.originalname).toLowerCase()
-    if (ext === '.jpg' || ext === '.png') {
-      cb(null, true)
-    } else {
-      const error = {
-        message: 'file must be jpg or png'
-      }
-      cb(error, false)
-    }
-  },
-  limits: {
-    fileSize: maxSize
-  }
+  })
 })
 
 // middleware

@@ -26,9 +26,9 @@ const userController = {
   updateData: (req, res) => {
     try {
       const { name, email, phone } = req.body
-      let photo = req.file.filename
-      if (!photo) {
-        photo = req.APP_DATA.tokenDecoded.photo
+      let image = req.file
+      if (!image) {
+        image = req.APP_DATA.tokenDecoded.image
       }
       const id = req.params.id
       if (!name) {
@@ -40,7 +40,7 @@ const userController = {
       if (!phone) {
         throw Error('Nomor telepon harus diisi')
       }
-      userModel.updateData(id, name, email, phone, photo)
+      userModel.updateData(id, name, email, phone, image)
         .then((result) => {
           if (result.rowCount > 0) {
             success(res, null, 'success', 'update data sukses!')

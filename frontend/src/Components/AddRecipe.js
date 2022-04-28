@@ -45,7 +45,6 @@ const AddRecipe = () => {
     const formData = new FormData();
     const { title, ingredients, video } = form;
     const token = localStorage.getItem('token');
-    const userId = localStorage.getItem("user_id")
     const decoded = jwt_decode(token);
 
     formData.append('title', title);
@@ -57,7 +56,7 @@ const AddRecipe = () => {
     axios
       .post('http://localhost:3001/insert/recipe', formData, {
         headers: {
-           Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
         },
       })
@@ -103,11 +102,11 @@ const AddRecipe = () => {
             <img className="image_add" src={Gambar1} alt="Gambar1" />
           </div>
       </div>
-          <h1 className="text_addphoto" id="customBtn" onClick={handleClick}>Add photo</h1>
+          <h1 className="text_addimage" id="customBtn" onClick={handleClick}>Add image</h1>
           <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
-          <input type="text" className="Rectangle330_add" placeholder="Title" onChange={(e) => onChangeInput(e.target.value, 'title')} required />
-          <textarea className="Rectangle331_add" placeholder="Ingredients" onChange={(e) => onChangeInput(e.target.value, 'ingredients')} required></textarea>
-          <input type="text" className="Rectangle332_add" placeholder="Video" onChange={(e) => onChangeInput(e.target.value, 'video')} required></input>
+          <input type="text" className="Rectangle330_add" placeholder="Title" onChange={(e) => onChangeInput(e, 'title')} required />
+          <textarea className="Rectangle331_add" placeholder="Ingredients" onChange={(e) => onChangeInput(e, 'ingredients')} required></textarea>
+          <input type="text" className="Rectangle332_add" placeholder="Video" onChange={(e) => onChangeInput(e, 'video')} required></input>
           <button type="submit" className="btnrectangle27">Post</button>
       </form>
 

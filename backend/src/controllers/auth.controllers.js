@@ -4,11 +4,10 @@ const { success, failed, successWithToken } = require('../helper/response')
 const jwtToken = require('../helper/generateToken')
 const authController = {
   register: (req, res) => {
-
     try {
-      // let photo = req.file.filename
-      // if (!photo) {
-      //   photo = null
+      // let image = req.file.filename
+      // if (!image) {
+      //   image = null
       // }
       const { name, email, password, phone } = req.body
       if (!name) {

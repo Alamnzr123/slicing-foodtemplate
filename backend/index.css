@@ -452,7 +452,7 @@
     content: "\f03d"
 }
 
-.fa-photo:before,
+.fa-image:before,
 .fa-image:before,
 .fa-picture-o:before {
     content: "\f03e"
@@ -1911,7 +1911,7 @@
     content: "\f1c4"
 }
 
-.fa-file-photo-o:before,
+.fa-file-image-o:before,
 .fa-file-picture-o:before,
 .fa-file-image-o:before {
     content: "\f1c5"

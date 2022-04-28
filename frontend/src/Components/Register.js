@@ -12,7 +12,7 @@ const Register = () => {
             password1: "",
             password2: "",
             phone: "",
-            photo: "",
+            image: "",
             terms: "",
         }
     )
@@ -74,7 +74,7 @@ const Register = () => {
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="phone">Phone Number</label><input className="form-control" placeholder="08xxxxxxxx" type="number" name="phone" id="phone" onChange={(e) => onChangeInput(e.target.value, "phone")} required=""/></div>
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password1">Create New Password</label><input className="form-control" placeholder="Create your password" type="password" onChange={(e) => onChangeInput(e.target.value, "password1")} name="password1" id="password1" required=""/></div>
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password2">New Password</label><input className="form-control" placeholder="New password" type="password" name="password2" onChange={(e) => onChangeInput(e.target.value, "password2")} id="password2" required=""/></div>
-                            {/* <div className="InputAuth_box__SHTUc"><label className="form-label" for="photo">Photo</label><input className="form-control" placeholder="Photo" type="file" name="photo" onChange={onChangePhoto} id="photo" required=""/></div> */}
+                            {/* <div className="InputAuth_box__SHTUc"><label className="form-label" for="image">image</label><input className="form-control" placeholder="image" type="file" name="image" onChange={onChangeimage} id="image" required=""/></div> */}
                             
                             <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="terms" onChange={(e) => onChangeInput(e.target.checked, "terms")} /><label for="terms"> I Aggree to term & Conditions</label><br/></div>
         

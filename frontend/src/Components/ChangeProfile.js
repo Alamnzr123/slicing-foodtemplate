@@ -21,7 +21,7 @@ const ChangeProfile = () => {
             <img src={Logopencil} />
         </div>
         <div className="Rectangle70_btn">
-            <button className="btn_down">Change Photo Profile</button>
+            <button className="btn_down">Change image Profile</button>
             <br/>
             <button className="btn_down">Change Password</button>
         </div>

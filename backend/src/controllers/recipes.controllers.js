@@ -73,7 +73,7 @@ const recipeController = {
       const id = req.params.id
       const { title, ingredients, video } = req.body
       const userID = req.APP_DATA.tokenDecoded.id
-      const photo = req.file.filename
+      const image = req.file.filename
 
       if (!id) {
         throw Error('ID harus dikirim')
@@ -88,7 +88,7 @@ const recipeController = {
         .then((result) => {
           if (result.rowCount > 0) {
             if (result.rows[0].user_id === userID) {
-              recipeModel.updateRecipe(id, photo, title, ingredients, video, userID)
+              recipeModel.updateRecipe(id, image, title, ingredients, video, userID)
                 .then((result) => {
                   success(res, null, 'success', 'update data recipe sukses!')
                 })
