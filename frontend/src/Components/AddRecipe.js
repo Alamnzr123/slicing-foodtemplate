@@ -9,10 +9,7 @@ const AddRecipe = () => {
 
   const hiddenFileInput = useRef(null);
   const navigate = useNavigate();
-  
   const token = localStorage.getItem('token');
-  const userId = localStorage.getItem("user_id")
-
   const [image, setImage] = useState('');
 
   const [form, setForm] = useState({
@@ -44,7 +41,6 @@ const AddRecipe = () => {
 
     const formData = new FormData();
     const { title, ingredients, video } = form;
-    const token = localStorage.getItem('token');
     const decoded = jwt_decode(token);
 
     formData.append('title', title);
@@ -52,6 +48,8 @@ const AddRecipe = () => {
     formData.append('ingredients', ingredients);
     formData.append('video', video);
     formData.append('user_id', decoded.id);
+
+    console.log(formData);
 
     axios
       .post('http://localhost:3001/insert/recipe', formData, {
@@ -61,37 +59,28 @@ const AddRecipe = () => {
         },
       })
       .then((response) => {
-        if(response.data.status !== "success") {
-            alert(response.data.status+": "+response.data.message)
-        } else {
-            alert(response.data.message)
-            return navigate("/profile")
-        }
+        console.log(response);
+        alert(response.data.message)
+        return navigate("/profile")
+        // if(response.data.status !== "success") {
+        //   alert("error axios")
+        //   // alert(response.data.status+": "+response.data.message)
+        // } else {
+
+        // }
     })
     .catch((err) => {
-        alert(err)
+        alert("error")
     })
   };
 
-
   useEffect(() => {
-    if (!token || !userId) {
-        alert("You must login!")
-        navigate("/login")
-    } else {
-        axios.get(process.env.REACT_APP_BACKEND_URL+"/list/user"+userId, {
-            headers: {
-                token: token
-            }
-        })
-        .then((response) => {
-           console.log(response.data.data)
-        })
-        .catch((err) => {
-          console.log(err.message)
-        })
+    if (!localStorage.getItem('token')) {
+      return navigate("/login");
     }
-}, [])
+  }, [navigate]);
+
+
 
   return (
     <div>

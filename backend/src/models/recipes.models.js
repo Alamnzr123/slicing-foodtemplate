@@ -59,7 +59,7 @@ const recipesModel = {
   },
   checkAuthor: (id) => {
     return new Promise((resolve, reject) => {
-      db.query('SELECT * from recipes WHERE id=$1', [id], (err, result) => {
+      db.query('SELECT * FROM recipes WHERE id=$1', [id], (err, result) => {
         if (err) {
           reject(err)
         } else {

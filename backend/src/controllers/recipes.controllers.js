@@ -25,7 +25,8 @@ const recipeController = {
           if (!detail) {
             detail = err.hint
           }
-          failed(res, null, 'error', detail)
+          console.log(err)
+          failed(res, null, 'error model', detail)
         })
     } catch (err) {
       failed(res, err.message, 'error', 'an error has occured')
@@ -109,38 +110,62 @@ const recipeController = {
       failed(res, null, 'error', err.message)
     }
   },
-  deleteRecipe: (req, res) => {
+  deleteRecipe: async (req, res) => {
     try {
-      const userID = req.APP_DATA.tokenDecoded.id
-      const id = req.params.id
-      if (!id) {
-        throw Error('ID harus diisi')
+      const { id } = req.params;
+      const checkId = await recipeModel.checkAuthor(id);
+
+      if (checkId.rows.length < 1) {
+        return failed(res, 404, 'failed', `Data by id ${id} not found !`);
       }
-      recipeModel.checkAuthor(id)
-        .then((result) => {
-          if (result.rowCount > 0) {
-            if (result.rows[0].user_id === userID) {
-              recipeModel.deleteRecipe(id)
-                .then((result) => {
-                  success(res, null, 'success', 'resep berhasil dihapus!')
-                })
-                .catch((err) => {
-                  failed(res, err, 'error', 'an error has occured')
-                })
-            } else {
-              failed(res, null, 'error', 'you are not the author')
-            }
-          } else {
-            failed(res, 'data not found', 'error', 'resep tidak ditemukan')
-          }
-        })
-        .catch((err) => {
-          failed(res, err, 'error', 'an error has occured')
-        })
-    } catch (err) {
-      failed(res, null, 'error', err.message)
+
+      if (req.APP_DATA.tokenDecoded.id !== checkId.rows[0].user_id) {
+        return failed(res, 403, 'failed', `You don't have access to this page`);
+      }
+
+      const file = checkId.rows[0].image;
+      if (file) {
+        deleteFile(`public/uploads/recipe/${file}`);
+      }
+
+      const result = await recipeModel.deleteRecipe(id);
+      return success(res, 200, 'success', `Success delete recipe id ${id}`);
+    } catch (error) {
+      return failed(res, 400, 'failed', `Bad Request : ${error.message}`);
     }
   },
+  // deleteRecipe: (req, res) => {
+  //   try {
+  //     const userID = req.APP_DATA.tokenDecoded.id
+  //     const id = req.params.id
+  //     if (!id) {
+  //       throw Error('ID harus diisi')
+  //     }
+  //     recipeModel.checkAuthor(id)
+  //       .then((result) => {
+  //         if (result.rowCount > 0) {
+  //           if (result.rows[0].user_id === userID) {
+  //             recipeModel.deleteRecipe(id)
+  //               .then((result) => {
+  //                 success(res, null, 'success', 'resep berhasil dihapus!')
+  //               })
+  //               .catch((err) => {
+  //                 failed(res, err, 'error', 'an error has occured')
+  //               })
+  //           } else {
+  //             failed(res, null, 'error', 'you are not the author')
+  //           }
+  //         } else {
+  //           failed(res, 'data not found', 'error', 'resep tidak ditemukan')
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         failed(res, err, 'error', 'an error has occured')
+  //       })
+  //   } catch (err) {
+  //     failed(res, null, 'error', err.message)
+  //   }
+  // },
   showNewRecipe: (req, res) => {
     try {
       recipeModel.showNewRecipe()

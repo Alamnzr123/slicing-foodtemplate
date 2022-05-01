@@ -7,9 +7,11 @@ const cors = require('cors')
 const userRoute = require('./src/router/user.route')
 const recipeRoute = require('./src/router/recipe.route')
 const authRoute = require('./src/router/auth.route')
+const morgan = require('morgan')
 
 const app = express()
 app.use(cors())
+app.use(morgan('dev'))
 app.use(helmet({
   crossOriginResourcePolicy: false
 }))

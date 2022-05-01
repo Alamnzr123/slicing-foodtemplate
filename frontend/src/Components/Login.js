@@ -39,8 +39,8 @@ const Login = () => {
                     alert(response.data.status+": "+response.data.message)
                 } else {
                     alert(response.data.message)
-                    localStorage.setItem("token", response.data.token)
-                    localStorage.setItem("user_id", response.data.data)
+                    localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('user_id', response.data.data)
                     return navigate("/")
                 }
             })

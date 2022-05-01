@@ -4,7 +4,9 @@ const { failed } = require('../helper/response')
 
 module.exports = (req, res, next) => {
   try {
-    const { token } = req.headers
+    const { authorization } = req.headers
+    const token = authorization.split(' ')[1]
+  
     const decoded = jwt.verify(token, JWT_SECRET)
     req.APP_DATA = { tokenDecoded: decoded }
     next()

@@ -10,7 +10,7 @@ router
   .get('/addrecipe', jwtAuth, isVerified, isCustomer, updateRecipe)
   .post('/insert/recipe', jwtAuth, isVerified, isCustomer, upload, createRecipe) // For create a new recipe
   .get('/list/recipe', jwtAuth, isVerified, recipeList) // For showing recipe
-  .get('/show/myrecipe', jwtAuth, isVerified, isCustomer, myRecipe) // For show your own recipe
+  .get('/show/myrecipe/', jwtAuth, isVerified, isCustomer, myRecipe) // For show your own recipe
   .put('/edit/recipe/:id', jwtAuth, isVerified, isCustomer, upload, updateRecipe) // For updating recipe
   .delete('/delete/recipe/:id', jwtAuth, isVerified, isCustomer, deleteRecipe) // For delete data on recipe by id
   .get('/recipe/latest', showNewRecipe) // For showing the latest data on recipe by date

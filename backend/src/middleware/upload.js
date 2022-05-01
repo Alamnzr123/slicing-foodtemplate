@@ -6,7 +6,7 @@ const { failed } = require('../helper/response')
 const multerUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, './public')
+      cb(null, './public/uploads/recipe')
     },
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname)
