@@ -4,6 +4,9 @@ const recipeModel = require('../models/recipes.models')
 const recipeController = {
   createRecipe: (req, res) => {
     try {
+      console.log(req.file)
+      console.log(req.body)
+      
       const { title, ingredients, video } = req.body
       if (!title) {
         throw Error('Title harus diisi')
@@ -71,6 +74,8 @@ const recipeController = {
   },
   updateRecipe: (req, res) => {
     try {
+      console.log(req.file)
+      console.log(req.body)
       const id = req.params.id
       const { title, ingredients, video } = req.body
       const userID = req.APP_DATA.tokenDecoded.id
@@ -88,7 +93,7 @@ const recipeController = {
       recipeModel.checkAuthor(id)
         .then((result) => {
           if (result.rowCount > 0) {
-            if (result.rows[0].user_id === userID) {
+            if (result.rows[0].user_id == userID) {
               recipeModel.updateRecipe(id, image, title, ingredients, video, userID)
                 .then((result) => {
                   success(res, null, 'success', 'update data recipe sukses!')

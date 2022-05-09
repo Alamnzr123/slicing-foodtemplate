@@ -29,14 +29,14 @@ useEffect(() => {
         .then((res) => {
           console.log(res.data)
           setTitle(res.data.data[0].title);
-          setImage(res.data.data[0].image);
+          // setImage(res.data.data[0].image);
           setIngredients(res.data.data[0].ingredients);
           setVideo(res.data.data[0].video);
         })
         .catch((err) => {
           console.log(err);
         });
-      document.getElementById('customBtn').innerHTML = image;
+      // document.getElementById('customBtn').innerHTML = image;
     } catch (error) {
       console.log(error.message);
     }
@@ -65,6 +65,8 @@ useEffect(() => {
     formData.append('ingredients', ingredients);
     formData.append('video', video);
     formData.append('user_id', decoded.id);
+
+    console.log(formData);
 
     axios
     .put(`${process.env.REACT_APP_BACKEND_URL}edit/recipe/${id}`, formData, {
@@ -99,7 +101,7 @@ useEffect(() => {
           </div>
       </div>
           <h1 className="text_addimage" id="customBtn" onClick={handleClick}>Add image</h1>
-          <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
+          <input type="file" value={image} ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
           <input type="text" value={title}  className="Rectangle330_add" placeholder="Title" onChange={(e) => setTitle(e.target.value)} required />
           <textarea className="Rectangle331_add" value={ingredients}  placeholder="Ingredients" onChange={(e) => setIngredients(e.target.value)} required></textarea>
           <input type="text" value={video}  className="Rectangle332_add" placeholder="Video" onChange={(e) => setVideo(e.target.value)} required></input>
