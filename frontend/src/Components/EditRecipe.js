@@ -12,6 +12,7 @@ const EditRecipe = () => {
 
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [fileImage, setFileImage] = useState(null);
   const [ingredients, setIngredients] = useState('');
   const [video, setVideo] = useState('');
   const { id } = useParams();
@@ -29,7 +30,7 @@ useEffect(() => {
         .then((res) => {
           console.log(res.data)
           setTitle(res.data.data[0].title);
-          // setImage(res.data.data[0].image);
+          setImage(`http://localhost:3001/uploads/recipe/${res.data.data[0].image}`);
           setIngredients(res.data.data[0].ingredients);
           setVideo(res.data.data[0].video);
         })
@@ -40,7 +41,7 @@ useEffect(() => {
     } catch (error) {
       console.log(error.message);
     }
-  }, [id, image]);
+  }, [id]);
   
   const handleClick = (event) => {
     hiddenFileInput.current.click();
@@ -48,8 +49,11 @@ useEffect(() => {
 
   const handleChange = (event) => {
     const fileUploaded = event.target.files[0];
+    const urlImage = URL.createObjectURL(fileUploaded);
+    console.log(fileUploaded)
     document.getElementById('customBtn').innerHTML = fileUploaded.name;
-    setImage(fileUploaded);
+    setFileImage(fileUploaded);
+    setImage(urlImage);
     // props.handleFile(fileUploaded);
   };
 
@@ -61,7 +65,7 @@ useEffect(() => {
     const decoded = jwt_decode(token);
 
     formData.append('title', title);
-    formData.append('image', image);
+    formData.append('image', fileImage);
     formData.append('ingredients', ingredients);
     formData.append('video', video);
     formData.append('user_id', decoded.id);
@@ -97,11 +101,12 @@ useEffect(() => {
       <form method="post" encType="multipart/form-data" onSubmit={(e) => onSubmit(e)}>
       <div className="Rectangle329">
           <div>
-            <img className="image_add" src={Gambar1} alt="Gambar1" />
+            <img className="image_add" src={image ? image : Gambar1} alt="Gambar1" />
           </div>
       </div>
           <h1 className="text_addimage" id="customBtn" onClick={handleClick}>Add image</h1>
-          <input type="file" value={image} ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
+          <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
+          
           <input type="text" value={title}  className="Rectangle330_add" placeholder="Title" onChange={(e) => setTitle(e.target.value)} required />
           <textarea className="Rectangle331_add" value={ingredients}  placeholder="Ingredients" onChange={(e) => setIngredients(e.target.value)} required></textarea>
           <input type="text" value={video}  className="Rectangle332_add" placeholder="Video" onChange={(e) => setVideo(e.target.value)} required></input>
