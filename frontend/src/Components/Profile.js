@@ -73,14 +73,14 @@ const Profile = () => {
     }).then((willDelete) => {
       if (willDelete) {
         const token = localStorage.getItem('token');
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}recipe/${id}`);
         axios
-          .delete(`${process.env.REACT_APP_BACKEND_URL}recipe/${id}`, {
+          .delete(`${process.env.REACT_APP_BACKEND_URL}delete/recipe/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           })
           .then((res) => {
+            console.log(res.data)
             swal({
               title: 'Success!',
               text: res.data.message,
@@ -151,6 +151,7 @@ const Profile = () => {
                               />
                     <h1 className="text_bombchicken_2">{e.title}</h1>
                     <button className="btn btn-primary" onClick={() => deleteRecipe(e.id)}>Hapus</button>
+                    <Link to={`/editrecipe/${e.id}`}><button className="btn btn-success">Edit</button></Link>
                   </div>
                 
                         </div>
@@ -166,7 +167,6 @@ const Profile = () => {
 
             <TabPane tabId="2">
               {" "}
-              <div className="line18"></div>
               <div>
                 <img
                   className="rectangle327_profile"
@@ -179,11 +179,10 @@ const Profile = () => {
                 <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
                 <h1 className="text_banana_2">Bananas Pancake</h1>
               </div>
-              <Footer />
+
             </TabPane>
             <TabPane tabId="3">
               {" "}
-              <div className="line18"></div>
               <div>
                 <img
                   className="rectangle327_profile"
@@ -196,7 +195,7 @@ const Profile = () => {
                 <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
                 <h1 className="text_banana_2">Bananas Pancake</h1>
               </div>
-              <Footer />
+
             </TabPane>
           </TabContent>
         </div>

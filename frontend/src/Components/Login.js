@@ -69,11 +69,12 @@ const Login = () => {
                 <div>
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="email">E-mail</label><input className="form-control" onChange={(e) => onChangeInput(e.target.value, "email")} placeholder="Enter your email address" type="email" name="email" id="email" required=""/></div>
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">Password</label><input className="form-control" onChange={(e) => onChangeInput(e.target.value, "password")} placeholder="Enter your password" type="password" name="password" id="password" required=""/></div>
-                    <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="terms" name="terms" onChange={(e) => onChangeInput(e.target.checked, "terms")}/><label for="terms"> I Aggree to term & Conditions</label></div>
+                    <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" className="form-check-input" id="terms" name="terms" onChange={(e) => onChangeInput(e.target.checked, "terms")}/><label for="terms" style={{left: "100px"}}> I Aggree to term & Conditions</label></div>
 
                     <button className="btn SignIn_btn_gold__YVLeP" type="submit">Login</button>
-                    <Link to='/forgotpass'><p style={{ textAlign: 'right' }}>Forgot Password ?</p></Link>
-                    <Link to='/register'><p style={{textAlign: 'center'}}>Don't have an account? Sign Up</p></Link></div>
+                    <Link to='/forgotpass' style={{ textAlign: 'right', textDecoration: 'none', position: 'relative', top: '30px', color : 'black' }}><div>Forgot Password ?</div></Link>
+                    <div style={{textAlign: 'center' , position : 'relative', top :'50px'}}>Don't have an account? <Link to='/register' style={{textDecoration : 'none', color: '#EFC81A'}}>Sign Up</Link></div>
+                    </div>
             </form>
         </div>
     </div>

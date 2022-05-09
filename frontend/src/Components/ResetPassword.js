@@ -19,7 +19,7 @@ const ResetPassword = () => {
                 <div>
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="email">Create New Password</label><input className="form-control" placeholder="Enter your new password" type="password" name="newpassword" id="newpassword" required=""/></div>
                     <div className="InputAuth_box__SHTUc"><label className="form-label" for="password">New Password</label><input className="form-control" placeholder="Enter your password" type="password" name="password" id="password" required=""/></div>
-                    <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="checkbox" name="checkbox" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label></div>
+                    <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" className="form-check-input" id="checkbox" name="checkbox" value="checkbox"/><label for="checkbox"> I Aggree to term & Conditions</label></div>
 
                   <Link to='/'><button className="btn SignIn_btn_gold__YVLeP" type="submit">Reset Password</button></Link>
                 </div>

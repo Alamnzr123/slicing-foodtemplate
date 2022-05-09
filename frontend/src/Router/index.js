@@ -13,6 +13,9 @@ import ResetPasswordCode from '../Components/ResetPasswordCode';
 import ResetPassword from '../Components/ResetPassword';
 import VideoRecipe from '../Components/VideoRecipe';
 import ChangeProfile from '../Components/ChangeProfile';
+import NotFound from '../Components/NotFound';
+import EditRecipe from '../Components/EditRecipe';
+
 
 const route = () => {
     return(
@@ -31,8 +34,10 @@ const route = () => {
                     <Route path="/changeprofile" element={<ChangeProfile />}>Change Profile</Route>
                     <Route path="/login" element={<Login />}>Login</Route>
                     <Route path="/addrecipe" element={<AddRecipe />}>Add Recipe</Route>
+                    <Route path="/editrecipe/:id" element={<EditRecipe />}>Edit Recipe</Route>
                     <Route path="/recipedetail" element={<RecipeDetail />}>Recipe Detail</Route>
                 </Route>
+                <Route path="*" element={<NotFound />} />
             </Routes>
             </BrowserRouter>
         </div>

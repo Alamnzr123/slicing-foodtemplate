@@ -2,27 +2,45 @@ import React, { useState, useRef, useEffect } from "react";
 import Navbar from "./Navbar";
 import Gambar1 from "../Assets/image-solid.svg";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 
-const AddRecipe = () => {
+const EditRecipe = () => {
 
   const hiddenFileInput = useRef(null);
   const navigate = useNavigate();
+
+  const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [video, setVideo] = useState('');
+  const { id } = useParams();
 
-  const [form, setForm] = useState({
-    title: '',
-    ingredients: '',
-    video: '',
-  });
-
-  const onChangeInput = (e, field) => {
-    setForm({
-      ...form,
-      [field]: e.target.value,
-    });
-  };
+//react-lifecycle
+useEffect(() => {
+    try {
+      const token = localStorage.getItem('token');
+      axios
+        .get(`${process.env.REACT_APP_BACKEND_URL}show/myrecipe`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
+        })
+        .then((res) => {
+          console.log(res.data)
+          setTitle(res.data.data[0].title);
+          setImage(res.data.data[0].image);
+          setIngredients(res.data.data[0].ingredients);
+          setVideo(res.data.data[0].video);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      document.getElementById('customBtn').innerHTML = image;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, [id, image]);
   
   const handleClick = (event) => {
     hiddenFileInput.current.click();
@@ -39,7 +57,6 @@ const AddRecipe = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    const { title, ingredients, video } = form;
     const token = localStorage.getItem('token');
     const decoded = jwt_decode(token);
 
@@ -49,10 +66,8 @@ const AddRecipe = () => {
     formData.append('video', video);
     formData.append('user_id', decoded.id);
 
-    console.log(formData);
-
     axios
-      .post('http://localhost:3001/insert/recipe', formData, {
+    .put(`${process.env.REACT_APP_BACKEND_URL}edit/recipe/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
@@ -70,17 +85,9 @@ const AddRecipe = () => {
         // }
     })
     .catch((err) => {
-        alert("error")
+        alert(err)
     })
   };
-
-  useEffect(() => {
-    if (!localStorage.getItem('token')) {
-      return navigate("/login");
-    }
-  }, [navigate]);
-
-
 
   return (
     <div>
@@ -93,9 +100,9 @@ const AddRecipe = () => {
       </div>
           <h1 className="text_addimage" id="customBtn" onClick={handleClick}>Add image</h1>
           <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />       
-          <input type="text" className="Rectangle330_add" placeholder="Title" onChange={(e) => onChangeInput(e, 'title')} required />
-          <textarea className="Rectangle331_add" placeholder="Ingredients" onChange={(e) => onChangeInput(e, 'ingredients')} required></textarea>
-          <input type="text" className="Rectangle332_add" placeholder="Video" onChange={(e) => onChangeInput(e, 'video')} required></input>
+          <input type="text" value={title}  className="Rectangle330_add" placeholder="Title" onChange={(e) => setTitle(e.target.value)} required />
+          <textarea className="Rectangle331_add" value={ingredients}  placeholder="Ingredients" onChange={(e) => setIngredients(e.target.value)} required></textarea>
+          <input type="text" value={video}  className="Rectangle332_add" placeholder="Video" onChange={(e) => setVideo(e.target.value)} required></input>
           <button type="submit" className="btnrectangle27">Post</button>
       </form>
 
@@ -113,4 +120,4 @@ const AddRecipe = () => {
   );
 };
 
-export default AddRecipe;
+export default EditRecipe;

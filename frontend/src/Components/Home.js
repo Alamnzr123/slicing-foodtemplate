@@ -38,11 +38,7 @@ const Home = () => {
 
     <div className="Slider">
       <div className="Rectangle2"></div>
-      <Link to='/login'><div className="Login">Login</div></Link>
       <Navbar />
-      <div className="Ellipse1">
-        <i className="Usericon"></i>
-      </div>
 
       <div className="LandingPage_gambar1"></div>
       <div className="Rectangle3">
@@ -84,10 +80,10 @@ const Home = () => {
           Healthy Bone Broth Ramen (Quick & Easy)
         </h1>
         <div className="line16"></div>
-        <div className="text_quickeasy2">
+        <p className="text_quickeasy2">
           Quick + Easy Chicken Bone Broth Ramen- Healthy chicken ramen in a
           hurry? That’s right!
-        </div>
+        </p>
         <div className="rectangle28"></div>
         <Link to='/recipedetail'><div className="text_learn2">Learn More</div></Link>
       </section>
@@ -123,12 +119,12 @@ const Home = () => {
 
       <footer className="Rectangle26">
         <h1 className="text_eat_cook2">Eat, Cook, Repeat</h1>
-        <p className="text_shareyour">
+        <h2 className="text_shareyour">
           Share your best recipe by uploading here !
-        </p>
-        <p className="text_productcompany">
+        </h2>
+        <h2 className="text_productcompany">
           Product &nbsp; Company &nbsp; Learn more &nbsp; Get in touch{" "}
-        </p>
+        </h2>
         <h3 className="text_arkademy">Arkademy</h3>
       </footer>
     </div>

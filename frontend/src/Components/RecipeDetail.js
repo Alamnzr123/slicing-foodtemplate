@@ -63,12 +63,12 @@ const RecipeDetail = () => {
 
       <footer className="Rectangle_26_detail">
         <h1 className="text_eat_cook2">Eat, Cook, Repeat</h1>
-        <p className="text_shareyour">
+        <div className="text_shareyour">
           Share your best recipe by uploading here !
-        </p>
-        <p className="text_productcompany">
+        </div>
+        <div className="text_productcompany">
           Product &nbsp; Company &nbsp; Learn more &nbsp; Get in touch{" "}
-        </p>
+        </div>
         <h3 className="text_arkademy">Arkademy</h3>
       </footer>
     </div>

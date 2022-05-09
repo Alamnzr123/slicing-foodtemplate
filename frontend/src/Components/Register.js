@@ -76,10 +76,11 @@ const Register = () => {
                             <div className="InputAuth_box__SHTUc"><label className="form-label" for="password2">New Password</label><input className="form-control" placeholder="New password" type="password" name="password2" onChange={(e) => onChangeInput(e.target.value, "password2")} id="password2" required=""/></div>
                             {/* <div className="InputAuth_box__SHTUc"><label className="form-label" for="image">image</label><input className="form-control" placeholder="image" type="file" name="image" onChange={onChangeimage} id="image" required=""/></div> */}
                             
-                            <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" id="terms" onChange={(e) => onChangeInput(e.target.checked, "terms")} /><label for="terms"> I Aggree to term & Conditions</label><br/></div>
+                            <div className="InputAuth_box__SHTUc_checkbox"><input type="checkbox" className="form-check-input"  id="terms" onChange={(e) => onChangeInput(e.target.checked, "terms")} /><label for="terms"> I Aggree to term & Conditions</label><br/></div>
         
                            <button className="btn SignIn_btn_gold__YVLeP" type="submit">Register Account</button>
-                           <Link to='/login'><p style={{textAlign: 'center'}}>Already have an account? Log in Here.</p></Link></div>
+                           <div style={{textAlign: 'center', top: '24px', position: 'relative'}}>Already have an account? <Link to='/login' style={{textDecoration: 'none', color: '#EFC81A'}}>Log in Here.</Link></div>
+                           </div>
                     </form>
                 </div>
             </div>
