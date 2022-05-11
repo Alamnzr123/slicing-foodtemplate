@@ -171,6 +171,68 @@ List of available routes:
     ![](https://img.shields.io/badge/jwt-decode-v3.1.2-blue)
     ![](https://img.shields.io/badge/axios-v0.26.1-blue)
     ![](https://img.shields.io/badge/bootstrap-v5.1.3-blue)
-```
-## Screenshot
 
+## Demo
+
+<details>
+  <summary>
+    Add Recipe
+  </summary>
+<img src="screenshot/addrecipe.png" alt="Add recipe" />
+</details>
+
+<details>
+  <summary>
+    Forgot password
+  </summary>
+<img src="screenshot/forgotpass.png" alt="Forgot Pass" />
+</details>
+
+<details>
+  <summary>
+    Register Page
+  </summary>
+<img src="screenshot/Home.png" alt="Home" />
+</details>
+
+<details>
+  <summary>
+    Detail Recipe Page
+  </summary>
+<img src="screenshot/login.png" alt="Login" />
+</details>
+
+<details>
+  <summary>
+    Detail Video Page
+  </summary>
+<img src="screenshot/newpass.png" alt="New Password" />
+</details>
+
+<details>
+  <summary>
+    View Recipe Page
+  </summary>
+<img src="screenshot/profile.png" alt="Profile" />
+</details>
+
+<details>
+  <summary>
+    Add Recipe Page
+  </summary>
+<img src="screenshot/recipedetail.png" alt="Recipe Detail" />
+</details>
+
+<details>
+  <summary>
+    Profile Page
+  </summary>
+<img src="screenshot/resetpass.png" alt="Reset Pass" />
+</details>
+
+<details>
+  <summary>
+    Profile Page
+  </summary>
+<img src="screenshot/videorecipe.png" alt="Video Recipe" />
+</details>
