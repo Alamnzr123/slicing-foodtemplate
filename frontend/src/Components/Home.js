@@ -10,32 +10,32 @@ import Gambar7 from "../Assets/ec253e0e662a4e3aa070cee5202021e3.jpg";
 import Gambar8 from "../Assets/bb6555764d018e0687640abdfde17ba9.jpg";
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 
 const Home = () => {
-  const [users, setUsers] = useState([])
-  const [isLoading, setisLoading] = useState(true)
-  const [isError, setisError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [users, setUsers] = useState([]);
+  const [isLoading, setisLoading] = useState(true);
+  const [isError, setisError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const [query] = useSearchParams()
-  const search = query.get("search")
+  const [query] = useSearchParams();
+  const search = query.get("search");
   useEffect(() => {
-      axios.get("http://localhost:3001/users")
+    axios
+      .get("http://localhost:3001/users")
       .then((response) => {
-          // console.log(response.data)
-          setUsers(response.data)
-          setisLoading(false)
+        // console.log(response.data)
+        setUsers(response.data);
+        setisLoading(false);
       })
       .catch((err) => {
-          console.log(err)
-          setisError(true)
-          setErrorMessage(err)
-      })
-  }, [])
+        console.log(err);
+        setisError(true);
+        setErrorMessage(err);
+      });
+  }, []);
 
   return (
-
     <div className="Slider">
       <div className="Rectangle2"></div>
       <Navbar />
@@ -62,7 +62,9 @@ const Home = () => {
           hurry? That’s right!
         </p>
         <div className="rectangle_28"></div>
-        <Link to='/recipedetail'><div className="text_learnmore">Learn More</div></Link>
+        <Link to="/recipedetail">
+          <div className="text_learnmore">Learn More</div>
+        </Link>
         <div className="Rectangle309"></div>
         <div>
           <img src={Gambar1} className="Rectangle313" alt="Gambar1" />
@@ -74,7 +76,7 @@ const Home = () => {
         <div className="Rectangle6"></div>
         <div className="Rectangle2_recipe"></div>
         <div>
-          <img className="Rectangle313_2" src={Gambar2}  alt="Gambar2"/>
+          <img className="Rectangle313_2" src={Gambar2} alt="Gambar2" />
         </div>
         <h1 className="text_healthy2">
           Healthy Bone Broth Ramen (Quick & Easy)
@@ -85,34 +87,36 @@ const Home = () => {
           hurry? That’s right!
         </p>
         <div className="rectangle28"></div>
-        <Link to='/recipedetail'><div className="text_learn2">Learn More</div></Link>
+        <Link to="/recipedetail">
+          <div className="text_learn2">Learn More</div>
+        </Link>
       </section>
 
       <section>
         <h1 className="text_popularrecipe">Popular Recipe</h1>
         <div className="Rectangle8"></div>
         <div>
-          <img className="Rectangle314_2" src={Gambar3} alt="Gambar3"/>
+          <img className="Rectangle314_2" src={Gambar3} alt="Gambar3" />
         </div>
         <div className="chicken_kare">Chiken Kare</div>
         <div>
-          <img className="Rectangle315_2" src={Gambar4} alt="Gambar4"/>
+          <img className="Rectangle315_2" src={Gambar4} alt="Gambar4" />
         </div>
         <div className="text_bombchicken">Bomb Chicken</div>
         <div>
-          <img className="Rectangle316_2" src={Gambar5} alt="Gambar5"/>
+          <img className="Rectangle316_2" src={Gambar5} alt="Gambar5" />
         </div>
         <div className="text_banana">Banana Smothie Pop</div>
         <div>
-          <img className="Rectangle317_2" src={Gambar6} alt="Gambar6"/>
+          <img className="Rectangle317_2" src={Gambar6} alt="Gambar6" />
         </div>
         <div className="text_coffe">Coffe Lava Cake</div>
         <div>
-          <img className="Rectangle318_2" src={Gambar7} alt="Gambar7"/>
+          <img className="Rectangle318_2" src={Gambar7} alt="Gambar7" />
         </div>
         <div className="text_sugarsalmon">Sugar Salmon</div>
         <div>
-          <img className="Rectangle319_2" src={Gambar8} alt="Gambar8"/>
+          <img className="Rectangle319_2" src={Gambar8} alt="Gambar8" />
         </div>
         <div className="text_indiansalad">Indian Salad</div>
       </section>

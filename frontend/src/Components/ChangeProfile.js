@@ -18,96 +18,95 @@ const ChangeProfile = () => {
         </div>
         <h1 className="text_garneta">Garneta Sharina</h1>
         <div className="logo_pencil">
-            <img src={Logopencil} />
+          <img src={Logopencil} />
         </div>
         <div className="Rectangle70_btn">
-            <button className="btn_down">Change image Profile</button>
-            <br/>
-            <button className="btn_down">Change Password</button>
+          <button className="btn_down">Change image Profile</button>
+          <br />
+          <button className="btn_down">Change Password</button>
         </div>
         <div className="line18"></div>
         <Footer />
       </section>
       <div className="navbar_myrecipe">
-          <Nav tabs>
-            <NavItem>
-              <NavLink
-                className={activeTab == "1" ? "active" : ""}
-                onClick={() => setActiveTab("1")}
-              >
-                My Recipe
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={activeTab == "2" ? "active" : ""}
-                onClick={() => setActiveTab("2")}
-              >
-                Saved Recipe
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={activeTab == "3" ? "active" : ""}
-                onClick={() => setActiveTab("3")}
-              >
-                Liked Recipe
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <TabContent activeTab={activeTab}>
-            <TabPane tabId="1">
-              {" "}
-
-              <div>
-                <img
-                  className="rectangle327_profile"
-                  src={Gambar2}
-                  alt="Gambar2"
-                />
-                <h1 className="text_bombchicken_2">Bomb Chicken</h1>
-              </div>
-              <div>
-                <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
-                <h1 className="text_banana_2">Bananas Pancake</h1>
-              </div>
-            </TabPane>
-            <TabPane tabId="2">
-              {" "}
-              <div className="line18"></div>
-              <div>
-                <img
-                  className="rectangle327_profile"
-                  src={Gambar2}
-                  alt="Gambar2"
-                />
-                <h1 className="text_bombchicken_2">Bomb Chicken</h1>
-              </div>
-              <div>
-                <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
-                <h1 className="text_banana_2">Bananas Pancake</h1>
-              </div>
-              <Footer />
-            </TabPane>
-            <TabPane tabId="3">
-              {" "}
-              <div className="line18"></div>
-              <div>
-                <img
-                  className="rectangle327_profile"
-                  src={Gambar2}
-                  alt="Gambar2"
-                />
-                <h1 className="text_bombchicken_2">Bomb Chicken</h1>
-              </div>
-              <div>
-                <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
-                <h1 className="text_banana_2">Bananas Pancake</h1>
-              </div>
-              <Footer />
-            </TabPane>
-          </TabContent>
-        </div>
+        <Nav tabs>
+          <NavItem>
+            <NavLink
+              className={activeTab == "1" ? "active" : ""}
+              onClick={() => setActiveTab("1")}
+            >
+              My Recipe
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              className={activeTab == "2" ? "active" : ""}
+              onClick={() => setActiveTab("2")}
+            >
+              Saved Recipe
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              className={activeTab == "3" ? "active" : ""}
+              onClick={() => setActiveTab("3")}
+            >
+              Liked Recipe
+            </NavLink>
+          </NavItem>
+        </Nav>
+        <TabContent activeTab={activeTab}>
+          <TabPane tabId="1">
+            {" "}
+            <div>
+              <img
+                className="rectangle327_profile"
+                src={Gambar2}
+                alt="Gambar2"
+              />
+              <h1 className="text_bombchicken_2">Bomb Chicken</h1>
+            </div>
+            <div>
+              <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
+              <h1 className="text_banana_2">Bananas Pancake</h1>
+            </div>
+          </TabPane>
+          <TabPane tabId="2">
+            {" "}
+            <div className="line18"></div>
+            <div>
+              <img
+                className="rectangle327_profile"
+                src={Gambar2}
+                alt="Gambar2"
+              />
+              <h1 className="text_bombchicken_2">Bomb Chicken</h1>
+            </div>
+            <div>
+              <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
+              <h1 className="text_banana_2">Bananas Pancake</h1>
+            </div>
+            <Footer />
+          </TabPane>
+          <TabPane tabId="3">
+            {" "}
+            <div className="line18"></div>
+            <div>
+              <img
+                className="rectangle327_profile"
+                src={Gambar2}
+                alt="Gambar2"
+              />
+              <h1 className="text_bombchicken_2">Bomb Chicken</h1>
+            </div>
+            <div>
+              <img className="Rectangle328_2" src={Gambar3} alt="Gambar3" />
+              <h1 className="text_banana_2">Bananas Pancake</h1>
+            </div>
+            <Footer />
+          </TabPane>
+        </TabContent>
+      </div>
     </div>
   );
 };

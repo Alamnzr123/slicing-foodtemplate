@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Gambar1 from "../Assets/logo.svg"
-import {Link} from 'react-router-dom';
+import Gambar1 from "../Assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const ResetPasswordCode = () => {
   return (
@@ -33,10 +33,13 @@ const ResetPasswordCode = () => {
                       required=""
                     />
                   </div>
-                  <Link to='/resetpass'>
-                  <button className="btn SignIn_btn_gold__YVLeP" type="submit">
-                    Reset Password
-                  </button>
+                  <Link to="/resetpass">
+                    <button
+                      className="btn SignIn_btn_gold__YVLeP"
+                      type="submit"
+                    >
+                      Reset Password
+                    </button>
                   </Link>
                 </div>
               </form>

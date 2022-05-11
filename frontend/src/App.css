@@ -4671,10 +4671,17 @@ p:hover {
 /* Rectangle 327 */
 
 .rectangle327_profile {
+    width: 100%;
+    height: 250px;
+    top: 170px;
+    border-radius: 10px;
+}
+
+.rectangle329_profile {
     position: absolute;
     width: 370px;
     height: 250px;
-    left: 0px;
+    left: 800px;
     top: 170px;
     border-radius: 10px;
 }
@@ -4683,10 +4690,23 @@ p:hover {
 /* Bomb Chicken */
 
 .text_bombchicken_2 {
+    width: 108px;
+    height: 0px;
+    padding-right: 90px;
+    font-family: Airbnb, sans-serif!important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.text_bombchicken_3 {
     position: absolute;
     width: 108px;
     height: 72px;
-    left: 20px;
+    left: 140px;
     top: 353px;
     font-family: Airbnb, sans-serif!important;
     font-style: normal;
@@ -4702,21 +4722,14 @@ p:hover {
 
 /* Product Company Learn more Get in touch */
 
-.text_productcompany2 {
-    position: absolute;
-    height: 28px;
+.Rectangle26_2 .text_productcompany2 {
     left: 743px;
-    top: 60px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     /* or 150% */
-    display: flex;
-    align-items: center;
-    text-align: center;
     text-transform: capitalize;
-    color: #707070;
 }
 
 
@@ -4757,9 +4770,9 @@ p:hover {
 
 .Rectangle26_2 {
     position: absolute;
-    width: 1920px;
+    text-align: center;
+    width: 100%;
     height: 104px;
-    left: 0px;
     top: 1200px;
     background: #EFC81A;
 }
@@ -4792,7 +4805,7 @@ p:hover {
     width: 370px;
     height: 250px;
     left: 536px;
-    top: 200px;
+    top: 50px;
     border-radius: 10px;
 }
 
@@ -5601,15 +5614,19 @@ p:hover {
     color: #2E266F;
 }
 
+.text-searchrestaurant:focus {
+    background-color: white;
+}
+
 
 /* search restaurant, food */
 
 .text-searchrestaurant {
     position: absolute;
     width: 500px;
-    height: 18px;
+    height: 60px;
     left: 15%;
-    top: 40%;
+    top: 20%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -5623,8 +5640,7 @@ p:hover {
     display: flex;
     align-items: center;
     text-transform: capitalize;
-    color: #B6B6B6;
-    opacity: 1;
+    color: black;
 }
 
 .BG {

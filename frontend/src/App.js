@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import React from "react";
 // import Login from "./Components/Login";
 // import Register from "./Components/Register";
@@ -11,12 +11,10 @@ import Router from "./Router/index";
 // import Home from "./Components/Home";
 
 function App() {
-  return(
+  return (
     <div className="App">
       <Router />
-
     </div>
-
 
     // <Profile />
     // <AddRecipe />
@@ -24,10 +22,9 @@ function App() {
     // <Home />
     // <ResetPassword />
     // <ForgotPassword />
-// {/* <Register /> */}
-// {/* <Login /> */}
-  )
-
+    // {/* <Register /> */}
+    // {/* <Login /> */}
+  );
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Gambar1 from "../Assets/logo.svg"
-import {Link} from 'react-router-dom';
+import Gambar1 from "../Assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -9,8 +9,8 @@ const ForgotPassword = () => {
         <div className="col-md-6 Auth_bg__o9fLW">
           <div className="mask_bg"></div>
           <div className="background_login_logo">
-        <img src={Gambar1} />
-      </div>
+            <img src={Gambar1} />
+          </div>
         </div>
         <div className="col-md-6 px-0">
           <nav className="navbar NavAuth_wrapper__PcJEB">
@@ -39,13 +39,10 @@ const ForgotPassword = () => {
                     required=""
                   />
                 </div>
-                <Link to='/resetpasscode'>
-                <button
-                  className="btn SignIn_btn_gold__YVLeP"
-                  type="submit"
-                >
-                  Send Mail
-                </button>
+                <Link to="/resetpasscode">
+                  <button className="btn SignIn_btn_gold__YVLeP" type="submit">
+                    Send Mail
+                  </button>
                 </Link>
               </div>
             </form>
