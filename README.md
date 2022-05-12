@@ -199,61 +199,61 @@ List of available routes:
   <summary>
     Add Recipe
   </summary>
-<img src="screenshot/addrecipe.png" alt="Add recipe" />
+<img src="frontend/screenshot/addrecipe.png" alt="Add recipe" />
 </details>
 
 <details>
   <summary>
     Forgot password
   </summary>
-<img src="screenshot/forgotpass.png" alt="Forgot Pass" />
+<img src="frontend/screenshot/forgotpass.png" alt="Forgot Pass" />
 </details>
 
 <details>
   <summary>
     Register Page
   </summary>
-<img src="screenshot/Home.png" alt="Home" />
+<img src="frontend/screenshot/Home.png" alt="Home" />
 </details>
 
 <details>
   <summary>
     Detail Recipe Page
   </summary>
-<img src="screenshot/login.png" alt="Login" />
+<img src="frontend/screenshot/login.png" alt="Login" />
 </details>
 
 <details>
   <summary>
     Detail Video Page
   </summary>
-<img src="screenshot/newpass.png" alt="New Password" />
+<img src="frontend/screenshot/newpass.png" alt="New Password" />
 </details>
 
 <details>
   <summary>
     View Recipe Page
   </summary>
-<img src="screenshot/profile.png" alt="Profile" />
+<img src="frontend/screenshot/profile.png" alt="Profile" />
 </details>
 
 <details>
   <summary>
     Add Recipe Page
   </summary>
-<img src="screenshot/recipedetail.png" alt="Recipe Detail" />
+<img src="frontend/screenshot/recipedetail.png" alt="Recipe Detail" />
 </details>
 
 <details>
   <summary>
     Profile Page
   </summary>
-<img src="screenshot/resetpass.png" alt="Reset Pass" />
+<img src="frontend/screenshot/resetpass.png" alt="Reset Pass" />
 </details>
 
 <details>
   <summary>
     Profile Page
   </summary>
-<img src="screenshot/videorecipe.png" alt="Video Recipe" />
+<img src="frontend/screenshot/videorecipe.png" alt="Video Recipe" />
 </details>
