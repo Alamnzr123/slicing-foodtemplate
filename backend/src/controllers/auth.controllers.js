@@ -3,13 +3,13 @@ const authModel = require('../models/auth.models')
 const { success, failed, successWithToken } = require('../helper/response')
 const jwtToken = require('../helper/generateToken')
 const authController = {
-  register: (req, res) => {
+  register: async (req, res) => {
     try {
       // let image = req.file.filename
       // if (!image) {
       //   image = null
       // }
-      const { name, email, password, phone } = req.body
+      const { name, email, password, phone } = await req.body
       if (!name) {
         throw Error('Nama harus diisi') // validation
       }
@@ -51,9 +51,9 @@ const authController = {
       failed(res, err.message, 'failed', 'Internal Server Error') // output if catching error
     }
   },
-  login: (req, res) => {
+  login: async (req, res) => {
     try {
-      const { password } = req.body
+      const { password } = await req.body
       const email = req.body.email.toLowerCase()
       if (!email) {
         throw Error('Email harus diisi') // validation

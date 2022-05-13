@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Gambar1 from "../Assets/4da51338c06dd21688b82eae3bc9dfa6.jpg";
 import Gambar2 from "../Assets/c08f710828e1d2aacf71af8c92583062.png";
 import { Link } from "react-router-dom";
-import Navbar from "../Components/Navbar";
+import Navbar from "./Navigation";
+import Footer from "./Footer4";
 
 const RecipeDetail = () => {
   return (
@@ -54,10 +55,10 @@ const RecipeDetail = () => {
             <i className="vector_play4"></i>
           </div>
         </Link>
-        <input
+        <textarea
           type="text"
           className="Rectangle331_detail"
-          placeholder="Comment"
+          placeholder="Comment:"
         />
         <button className="Rectangle27_detail">Send</button>
         <h1 className="text_comment_detail">Comment</h1>
@@ -70,16 +71,7 @@ const RecipeDetail = () => {
         </div>
       </section>
 
-      <footer className="Rectangle_26_detail">
-        <h1 className="text_eat_cook2">Eat, Cook, Repeat</h1>
-        <div className="text_shareyour">
-          Share your best recipe by uploading here !
-        </div>
-        <div className="text_productcompany">
-          Product &nbsp; Company &nbsp; Learn more &nbsp; Get in touch{" "}
-        </div>
-        <h3 className="text_arkademy">Arkademy</h3>
-      </footer>
+      <Footer />
     </div>
   );
 };

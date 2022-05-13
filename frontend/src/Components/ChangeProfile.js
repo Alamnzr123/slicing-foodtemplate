@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListNavbar from "./Navbar";
+import ListNavbar from "./Navigation";
 import Footer from "./Footer";
 import Gambar1 from "../Assets/4662c85cb7661f579e2c9baff0ce5fdc.png";
 import Gambar2 from "../Assets/cfef9bb1fc6e0bef50d5c8ef7a6cdff6.jpg";

@@ -95,11 +95,11 @@ const Register = () => {
               </div>
               <div className="InputAuth_box__SHTUc">
                 <label className="form-label" for="email">
-                  E-mail Address*
+                  Email address*
                 </label>
                 <input
                   className="form-control"
-                  placeholder="Enter your email address"
+                  placeholder="Enter email address"
                   type="email"
                   onChange={(e) => onChangeInput(e.target.value, "email")}
                   name="email"
@@ -127,7 +127,7 @@ const Register = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeholder="Create your password"
+                  placeholder="Create New Password"
                   type="password"
                   onChange={(e) => onChangeInput(e.target.value, "password1")}
                   name="password1"
@@ -158,7 +158,7 @@ const Register = () => {
                   id="terms"
                   onChange={(e) => onChangeInput(e.target.checked, "terms")}
                 />
-                <label for="terms"> I Aggree to term & Conditions</label>
+                <label for="terms"> I aggree to terms & Conditions</label>
                 <br />
               </div>
 
@@ -167,7 +167,7 @@ const Register = () => {
               </button>
               <div
                 style={{
-                  textAlign: "center",
+                  left: "100px",
                   top: "24px",
                   position: "relative",
                 }}
@@ -177,7 +177,7 @@ const Register = () => {
                   to="/login"
                   style={{ textDecoration: "none", color: "#EFC81A" }}
                 >
-                  Log in Here.
+                  Log in Here
                 </Link>
               </div>
             </div>

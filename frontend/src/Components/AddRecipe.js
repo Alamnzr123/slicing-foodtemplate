@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Navigation";
 import Gambar1 from "../Assets/image-solid.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import Footer from "../Components/Footer3";
 
 const AddRecipe = () => {
   const hiddenFileInput = useRef(null);
@@ -93,7 +94,7 @@ const AddRecipe = () => {
           </div>
         </div>
         <h1 className="text_addimage" id="customBtn" onClick={handleClick}>
-          Add image
+          Add Photo
         </h1>
         <input
           type="file"
@@ -126,16 +127,7 @@ const AddRecipe = () => {
         </button>
       </form>
 
-      <footer className="Rectangle26_add">
-        <h1 className="text_eat_cook2">Eat, Cook, Repeat</h1>
-        <p className="text_shareyour">
-          Share your best recipe by uploading here !
-        </p>
-        <p className="text_productcompany">
-          Product &nbsp; Company &nbsp; Learn more &nbsp; Get in touch{" "}
-        </p>
-        <h3 className="text_arkademy">Arkademy</h3>
-      </footer>
+      <Footer />
     </div>
   );
 };

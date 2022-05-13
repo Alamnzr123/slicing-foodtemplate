@@ -41,7 +41,7 @@ const ForgotPassword = () => {
                 </div>
                 <Link to="/resetpasscode">
                   <button className="btn SignIn_btn_gold__YVLeP" type="submit">
-                    Send Mail
+                    Send E-mail
                   </button>
                 </Link>
               </div>

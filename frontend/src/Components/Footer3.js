@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Container } from "reactstrap";
 
 const Section = styled.footer`
-  height: auto;
   background-color: var(--secondary-color);
   color: var(--color-2);
   padding-top: 200px;
   font-family: "Airbnb Cereal App Light";
-  margin-top: 80px;
-  position: relative;
+  margin-top: 1800px;
+  width: 100%;
+  position: absolute;
   text-align: center;
 `;
 

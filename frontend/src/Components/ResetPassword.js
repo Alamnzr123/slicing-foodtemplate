@@ -23,7 +23,6 @@ const ResetPassword = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeholder="Enter your new password"
                   type="password"
                   name="newpassword"
                   id="newpassword"
@@ -36,7 +35,6 @@ const ResetPassword = () => {
                 </label>
                 <input
                   className="form-control"
-                  placeholder="Enter your password"
                   type="password"
                   name="password"
                   id="password"
@@ -51,7 +49,7 @@ const ResetPassword = () => {
                   name="checkbox"
                   value="checkbox"
                 />
-                <label for="checkbox"> I Aggree to term & Conditions</label>
+                <label for="checkbox"> I aggree to terms & conditions</label>
               </div>
 
               <Link to="/">

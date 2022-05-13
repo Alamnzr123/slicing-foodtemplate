@@ -1,29 +1,22 @@
 import "./App.css";
+import GlobalStyles from "./styles/GlobalStyles";
 import React from "react";
-// import Login from "./Components/Login";
-// import Register from "./Components/Register";
-// import ForgotPassword from "./Components/ForgotPassword";
-// import ResetPassword from "./Components/ResetPassword";
-// import RecipeDetail from "./Components/RecipeDetail";
-// import AddRecipe from "./Components/AddRecipe";
-// import Profile from "./Components/Profile";
 import Router from "./Router/index";
-// import Home from "./Components/Home";
+
+import "./fonts/AirbnbCerealBold.woff";
+import "./fonts/AirbnbCerealLight.woff";
+import "./fonts/AirbnbCerealMedium.woff";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "aos/dist/aos.css";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <Router />
     </div>
-
-    // <Profile />
-    // <AddRecipe />
-    // <RecipeDetail />
-    // <Home />
-    // <ResetPassword />
-    // <ForgotPassword />
-    // {/* <Register /> */}
-    // {/* <Login /> */}
   );
 }
 

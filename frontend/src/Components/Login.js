@@ -64,6 +64,7 @@ const Login = () => {
             <span>Welcome</span>
             <br />
             <p>Log in into your existing account.</p>
+            {/* <hr style={{}} /> */}
             <div>
               <div className="InputAuth_box__SHTUc">
                 <label className="form-label" for="email">
@@ -72,7 +73,7 @@ const Login = () => {
                 <input
                   className="form-control"
                   onChange={(e) => onChangeInput(e.target.value, "email")}
-                  placeholder="Enter your email address"
+                  placeholder="examplexxx@gmail.com"
                   type="email"
                   name="email"
                   id="email"
@@ -86,7 +87,7 @@ const Login = () => {
                 <input
                   className="form-control"
                   onChange={(e) => onChangeInput(e.target.value, "password")}
-                  placeholder="Enter your password"
+                  placeholder="Password"
                   type="password"
                   name="password"
                   id="password"
@@ -103,19 +104,19 @@ const Login = () => {
                 />
                 <label for="terms" style={{ left: "100px" }}>
                   {" "}
-                  I Aggree to term & Conditions
+                  I aggree to terms & conditions
                 </label>
               </div>
 
               <button className="btn SignIn_btn_gold__YVLeP" type="submit">
-                Login
+                Log in
               </button>
               <Link
                 to="/forgotpass"
                 style={{
-                  textAlign: "right",
-                  textDecoration: "none",
                   position: "relative",
+                  textDecoration: "none",
+                  left: "300px",
                   top: "30px",
                   color: "black",
                 }}
@@ -124,7 +125,7 @@ const Login = () => {
               </Link>
               <div
                 style={{
-                  textAlign: "center",
+                  left: "130px",
                   position: "relative",
                   top: "50px",
                 }}
