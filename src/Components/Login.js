@@ -32,7 +32,7 @@ const Login = () => {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/login`, body)
         .then((response) => {
-          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("token", response.data.token);
           if (response.data.status !== "success") {
             alert(response.data.status + ": " + response.data.message);
           } else {
