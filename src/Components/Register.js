@@ -11,7 +11,6 @@ const Register = () => {
     password1: "",
     password2: "",
     phone: "",
-    image: "",
     terms: "",
   });
   const onChangeInput = (e, field) => {
@@ -26,9 +25,9 @@ const Register = () => {
       alert("You must agree terms & conditions");
     } else if (
       form.name == "" ||
-      form.phone == "" ||
       form.email == "" ||
-      form.password == ""
+      form.password == "" ||
+      form.phone == ""
     ) {
       alert("All field must be filled !");
     } else if (form.password1 !== form.password2) {
