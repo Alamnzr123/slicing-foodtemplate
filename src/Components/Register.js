@@ -45,16 +45,29 @@ const Register = () => {
             "Content-Type": "application/json",
           },
         })
-        .then((response) => {
-          if (response.data.status !== "success") {
-            alert(response.data.status + ": " + response.data.message);
-          } else {
-            alert(response.data.message);
-            return navigate("/login");
-          }
+        .then((res) => {
+          swal({
+            title: "Success!",
+            text: res.data.message,
+            icon: "success",
+          }).then(() => {
+            navigate("/login");
+          });
         })
         .catch((err) => {
-          alert(err);
+          const error = err.response.data.errors;
+          error.map((e) => {
+            return toast.error(e, {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          });
         });
     }
   };
