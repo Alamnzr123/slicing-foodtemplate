@@ -42,7 +42,7 @@ const Register = () => {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/register`, body, {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
           },
         })
         .then((response) => {
