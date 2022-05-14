@@ -22,7 +22,7 @@ const EditRecipe = () => {
     try {
       const token = localStorage.getItem("token");
       axios
-        .get(`${process.env.REACT_APP_BACKEND_URL}show/myrecipe`, {
+        .get(`${process.env.REACT_APP_BACKEND_URL}/show/myrecipe`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +31,7 @@ const EditRecipe = () => {
           console.log(res.data);
           setTitle(res.data.data[0].title);
           setImage(
-            `${process.env.REACT_APP_BACKEND_URL}uploads/recipe/${res.data.data[0].image}`
+            `${process.env.REACT_APP_BACKEND_URL}/uploads/recipe/${res.data.data[0].image}`
           );
           setIngredients(res.data.data[0].ingredients);
           setVideo(res.data.data[0].video);
@@ -75,7 +75,7 @@ const EditRecipe = () => {
     console.log(formData);
 
     axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}edit/recipe/${id}`, formData, {
+      .put(`${process.env.REACT_APP_BACKEND_URL}/edit/recipe/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

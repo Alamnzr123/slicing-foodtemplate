@@ -40,11 +40,7 @@ const Register = () => {
         phone: form.phone,
       };
       axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/register`, body, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        .post(`${process.env.REACT_APP_BACKEND_URL}/register`, body)
         .then((response) => {
           if (response.data.status !== "success") {
             alert(response.data.status + ": " + response.data.message);
