@@ -31,7 +31,7 @@ const EditRecipe = () => {
           console.log(res.data);
           setTitle(res.data.data[0].title);
           setImage(
-            `http://localhost:3001/uploads/recipe/${res.data.data[0].image}`
+            `${process.env.REACT_APP_BACKEND_URL}uploads/recipe/${res.data.data[0].image}`
           );
           setIngredients(res.data.data[0].ingredients);
           setVideo(res.data.data[0].video);

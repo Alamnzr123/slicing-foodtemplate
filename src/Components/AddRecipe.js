@@ -52,7 +52,7 @@ const AddRecipe = () => {
     console.log(formData);
 
     axios
-      .post("http://localhost:3001/insert/recipe", formData, {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/insert/recipe`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

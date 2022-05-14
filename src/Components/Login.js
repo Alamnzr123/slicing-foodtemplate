@@ -30,7 +30,7 @@ const Login = () => {
         password: form.password,
       };
       axios
-        .post("http://localhost:3001/login", body)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/login`, body)
         .then((response) => {
           if (response.data.status !== "success") {
             alert(response.data.status + ": " + response.data.message);
