@@ -46,35 +46,35 @@ Search, Order, Cart. This website require ReactJS for frontend support.
   <summary>
     Reset Passcode
   </summary>
-<img src="screenshoots/Reset Passcode.jpeg" alt="Reset Passcode" />
+<img src="screenshoot/Reset Passcode.jpeg" alt="Reset Passcode" />
 </details>
 
 <details>
   <summary>
    Forgot Password
   </summary>
-<img src="screenshoots/Forgot Password.jpeg" alt="Forgot Password" />
+<img src="screenshoot/Forgot Password.jpeg" alt="Forgot Password" />
 </details>
 
 <details>
   <summary>
    Register
   </summary>
-<img src="screenshoots/Register.jpeg" alt="Register" />
+<img src="screenshoot/Register.jpeg" alt="Register" />
 </details>
 
 <details>
   <summary>
    Login
   </summary>
-<img src="screenshoots/Login.png" alt="Login" />
+<img src="screenshoot/Login.png" alt="Login" />
 </details>
 
 <details>
   <summary>
    Error
   </summary>
-<img src="screenshoots/Error.png" alt="Error" />
+<img src="screenshoot/Error.png" alt="Error" />
 </details>
 
 
