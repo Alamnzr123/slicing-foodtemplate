@@ -264,7 +264,10 @@ const Profile = () => {
                           <Title>{e.title}</Title>
 
                           <Option>
-                            <Link to={`/recipe/${e.id}`} className="btn-view">
+                            <Link
+                              to={`/recipe/detail/${e.id}`}
+                              className="btn-view"
+                            >
                               <i class="fa-solid fa-eye"></i>
                             </Link>
                             <Link

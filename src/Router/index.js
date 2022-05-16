@@ -65,6 +65,7 @@ const route = () => {
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
+          <Route path="/recipe/detail/:id" element={<RecipeDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

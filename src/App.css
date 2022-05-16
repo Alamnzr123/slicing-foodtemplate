@@ -5201,6 +5201,7 @@ p:hover {
 
 .Rectangle318_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 710px;
@@ -5361,6 +5362,7 @@ p:hover {
 
 .Rectangle319_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 1285px;
@@ -5393,6 +5395,7 @@ p:hover {
 
 .Rectangle317_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 134px;
@@ -5425,6 +5428,7 @@ p:hover {
 
 .Rectangle316_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 1285px;
@@ -5457,6 +5461,7 @@ p:hover {
 
 .Rectangle315_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 710px;
@@ -5469,6 +5474,7 @@ p:hover {
 
 .Rectangle314_2 {
     position: absolute;
+    object-fit: cover;
     width: 500px;
     height: 500px;
     left: 135px;
@@ -6240,10 +6246,9 @@ optgroup,
 select,
 textarea {
     padding-top: 35px;
-    text-indent: 60px;
+    padding-left: 60px;
     border: none;
     line-height: inherit;
-    margin: 0;
 }
 
 button,
