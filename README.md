@@ -79,7 +79,7 @@ Search, Order, Cart. This website require ReactJS for frontend support.
 
 
 ## Related Project
-RESTful API for this web application, clone this for development Mama Recipe.\
+RESTful API for this web application, clone this for development Foodtemplate.\
 [backend-slicingfoodtemplate](https://github.com/Alamnzr123/backend-slicingfoodtemplate)
 
 ## Contributing
