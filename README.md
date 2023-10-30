@@ -34,7 +34,7 @@ npm install
 ```
 
 ## Framework
-ReactJS
+ReactJS(https://react.dev/)
 
 ## Screenshoots
 <details>
