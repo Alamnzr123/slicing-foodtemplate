@@ -27,6 +27,15 @@ Search, Order, Cart. This website require ReactJS for frontend support.
    |── .README.md      # For Readme In github
 ```
 
+## Usage
+
+```Javascript
+npm install
+```
+
+## Framework
+ReactJS
+
 ## Screenshoots
 <details>
   <summary>
