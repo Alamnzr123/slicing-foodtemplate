@@ -55,40 +55,50 @@ Search, Order, Cart. This website require ReactJS for frontend support.
    |── .README.md      # For Readme In github
 ```
 
+## Usage
+
+```Javascript
+npm install
+```
+
+## Framework
+ \
+[ReactJS](https://react.dev/)
+
 ## Screenshoots
 <details>
   <summary>
     Landing Page
   </summary>
-<img src="screenshoot/Landing Page.png" alt="Landing Page" />
+<img src="screenshoot/Landing Page.jpeg" alt="Landing Page" />
 </details>
 
 <details>
   <summary>
     Reset Password
   </summary>
-<img src="screenshoot/Reset Password.png" alt="Reset Password" />
+<img src="screenshoot/Reset Password.jpeg" alt="Reset Password" />
 </details>
 
 <details>
   <summary>
     Reset Passcode
   </summary>
-<img src="screenshoot/Reset Passcode.png" alt="Reset Passcode" />
+<img src="screenshoot/Reset Passcode.jpeg" alt="Reset Passcode" />
 </details>
 
 <details>
   <summary>
    Forgot Password
   </summary>
-<img src="screenshoot/Forgot Password.png" alt="Forgot Password" />
+<img src="screenshoot/Forgot Password.jpeg" alt="Forgot Password" />
 </details>
 
 <details>
   <summary>
    Register
   </summary>
-<img src="screenshoot/Register.png" alt="Register" />
+<img src="screenshoot/Register.jpeg" alt="Register" />
 </details>
 
 <details>
