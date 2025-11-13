@@ -29,7 +29,12 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "docker:build": "docker build --build-arg REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL -t slicing-foodtemplate-frontend:local .",
+        "docker:build:ps": "powershell -Command \"docker build --build-arg REACT_APP_BACKEND_URL=${env:REACT_APP_BACKEND_URL} -t slicing-foodtemplate-frontend:local .\"",
+        "docker:run": "docker run -p 3000:80 slicing-foodtemplate-frontend:local",
+        "docker:compose:up": "docker-compose up --build -d",
+        "docker:compose:down": "docker-compose down"
     },
     "eslintConfig": {
         "extends": [

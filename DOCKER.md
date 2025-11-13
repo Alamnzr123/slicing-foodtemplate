@@ -5,7 +5,7 @@ This project includes a Dockerfile and a sample docker-compose.yml to build a pr
 Key points:
 
 - The frontend reads the API base URL at build time from REACT_APP_BACKEND_URL (also embedded into the built static files). At runtime the built JS will attempt to call that URL.
-- On Windows, if your backend runs on the host (e.g. https://localhost:3001), use https://host.docker.internal:3001 as the backend URL when running the container so the container can reach the host.
+  -- On Windows, if your backend runs on the host, prefer pointing the frontend at the API gateway using plain HTTP (for example http://localhost:4000/api) unless you've configured TLS on the backend and the container trusts the certificate.
 
 Build and run with docker-compose (recommended):
 
@@ -13,14 +13,14 @@ Build and run with docker-compose (recommended):
 # Build and run, pointing the frontend at a backend running on the host
 docker-compose up --build -d
 
-# Or explicitly set the backend URL
-$env:REACT_APP_BACKEND_URL = 'https://host.docker.internal:3001'; docker-compose up --build -d
+# Or explicitly set the backend URL to the gateway (http)
+$env:REACT_APP_BACKEND_URL = 'http://localhost:4000/api'; docker-compose up --build -d
 ```
 
 Build only with docker:
 
 ```powershell
-docker build --build-arg REACT_APP_BACKEND_URL=https://host.docker.internal:3001 -t slicing-foodtemplate-frontend:local .
+docker build --build-arg REACT_APP_BACKEND_URL=http://localhost:4000/api -t slicing-foodtemplate-frontend:local .
 docker run -p 3000:80 slicing-foodtemplate-frontend:local
 ```
 
