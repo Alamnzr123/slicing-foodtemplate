@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ListNavbar from "./Navigation";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api, { authHeaders, assetUrl } from "../api";
 import jwt_decode from "jwt-decode";
 import Footer from "./Footer";
 import swal from "sweetalert";
@@ -142,12 +142,7 @@ const Profile = () => {
         return navigate("/login");
       } else {
         const decoded = jwt_decode(token);
-        axios
-          .get(`${process.env.REACT_APP_BACKEND_URL}/show/myrecipe/`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
+        api.get(`/show/myrecipe/`)
           .then((res) => {
             setMyRecipe(res.data.data);
           })
@@ -173,12 +168,7 @@ const Profile = () => {
     }).then((willDelete) => {
       if (willDelete) {
         const token = localStorage.getItem("token");
-        axios
-          .delete(`${process.env.REACT_APP_BACKEND_URL}/delete/recipe/${id}`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
+        api.delete(`/delete/recipe/${id}`)
           .then((res) => {
             console.log(res.data);
             swal({
@@ -257,10 +247,7 @@ const Profile = () => {
                     <Col key={i}>
                       <Card className="border-0">
                         <CardBody className="p-0">
-                          <Image
-                            src={`${process.env.REACT_APP_BACKEND_URL}/uploads/recipe/${e.image}`}
-                            alt={e.title}
-                          />
+                          <Image src={assetUrl(`/uploads/recipe/${e.image}`)} alt={e.title} />
                           <Title>{e.title}</Title>
 
                           <Option>

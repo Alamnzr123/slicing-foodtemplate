@@ -3,7 +3,7 @@ import Gambar1 from "../Assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
-import axios from "axios";
+import api from "../api";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -41,12 +41,8 @@ const Register = () => {
         password: form.password1,
         phone: form.phone,
       };
-      axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/register`, body, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+      api
+        .post(`/register`, body)
         .then((res) => {
           swal({
             title: "Success!",
@@ -57,19 +53,34 @@ const Register = () => {
           });
         })
         .catch((err) => {
-          const error = err.response.data.errors;
-          error.map((e) => {
-            return toast.error(e, {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          });
+          const resp = err && err.response && err.response.data;
+          // backend may return { code: 500, status: 'failed', message: 'Email already registered', error: '...' }
+          if (resp && resp.message && resp.message.toLowerCase().includes('email')) {
+            // show clear message to user
+            swal({ title: 'Registration failed', text: resp.message, icon: 'error' });
+            return;
+          }
+
+          const errors = resp && resp.errors;
+          if (Array.isArray(errors)) {
+            errors.forEach((e) =>
+              toast.error(e, {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+              })
+            );
+            return;
+          }
+
+          // fallback for network or unexpected errors
+          const message = (resp && (resp.message || resp.error)) || (err && err.message) || 'Registration failed. Please check your connection and try again.';
+          toast.error(message, { position: 'top-right', autoClose: 3000 });
         });
     }
   };

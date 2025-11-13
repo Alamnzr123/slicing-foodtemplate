@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Navbar from "./Navigation";
 import Gambar1 from "../Assets/image-solid.svg";
-import axios from "axios";
+import api, { assetUrl } from "../api";
 import { useNavigate, useParams } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Footer from "../Components/Footer3";
@@ -21,17 +21,13 @@ const EditRecipe = () => {
   useEffect(() => {
     try {
       const token = localStorage.getItem("token");
-      axios
-        .get(`${process.env.REACT_APP_BACKEND_URL}/show/myrecipe`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+      api
+        .get(`/show/myrecipe`)
         .then((res) => {
           console.log(res.data);
           setTitle(res.data.data[0].title);
           setImage(
-            `${process.env.REACT_APP_BACKEND_URL}/uploads/recipe/${res.data.data[0].image}`
+            assetUrl(`/uploads/recipe/${res.data.data[0].image}`)
           );
           setIngredients(res.data.data[0].ingredients);
           setVideo(res.data.data[0].video);
@@ -74,12 +70,9 @@ const EditRecipe = () => {
 
     console.log(formData);
 
-    axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/edit/recipe/${id}`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
+    api
+      .put(`/edit/recipe/${id}`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       })
       .then((response) => {
         console.log(response);

@@ -2,7 +2,7 @@ import "../App.css";
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 import Gambar1 from "../Assets/logo.svg";
 
 const Login = () => {
@@ -29,22 +29,42 @@ const Login = () => {
         email: form.email,
         password: form.password,
       };
-      axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/login`, body)
-        .then((response) => {
-          localStorage.setItem("token", response.data.token);
-          if (response.data.status !== "success") {
-            alert(response.data.status + ": " + response.data.message);
+      (async () => {
+        try {
+          const response = await api.post(`/login`, body);
+          console.log('Login response:', response);
+          if (response && response.data) {
+            if (response.data.status !== 'success') {
+              alert(response.data.status + ': ' + response.data.message);
+            } else {
+              alert(response.data.message);
+              localStorage.setItem('token', response.data.token);
+              localStorage.setItem('user_id', response.data.data);
+              return navigate('/');
+            }
           } else {
-            alert(response.data.message);
-            localStorage.setItem("token", response.data.token);
-            localStorage.setItem("user_id", response.data.data);
-            return navigate("/");
+            alert('Login failed: empty response from server');
+            console.error('Empty login response', response);
           }
-        })
-        .catch((err) => {
-          alert(err);
-        });
+        } catch (err) {
+          // Best-effort: surface status and body when available
+          console.error('Login error', err);
+          if (err.response) {
+            // server responded with a status code outside 2xx
+            console.error('Error response headers:', err.response.headers);
+            console.error('Error response data:', err.response.data);
+            alert(`Login failed: ${err.response.status} ${JSON.stringify(err.response.data)}`);
+          } else if (err.request) {
+            // request made but no response
+            console.error('No response received, request:', err.request);
+            alert('Login failed: no response from server (network or gateway error)');
+          } else {
+            // something happened setting up the request
+            console.error('Error setting up request:', err.message);
+            alert('Login failed: ' + err.message);
+          }
+        }
+      })();
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Navbar from "./Navigation";
 import Gambar1 from "../Assets/image-solid.svg";
-import axios from "axios";
+import api from "../api";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Footer from "../Components/Footer3";
@@ -51,12 +51,9 @@ const AddRecipe = () => {
 
     console.log(formData);
 
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/insert/recipe`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
+    api
+      .post(`/insert/recipe`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       })
       .then((response) => {
         console.log(response);

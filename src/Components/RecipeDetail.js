@@ -7,7 +7,7 @@ import Footer from "./Footer4";
 import jwt_decode from "jwt-decode";
 import { Container, Form, FormGroup } from "reactstrap";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api, { authHeaders, assetUrl } from "../api";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
 import saved from "../Assets/bookmark.png";
@@ -216,12 +216,7 @@ const RecipeDetail = () => {
         });
         return navigate("/");
       } else {
-        axios
-          .get(`${process.env.REACT_APP_BACKEND_URL}/recipe/detail/${id}`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
+        api.get(`/recipe/detail/${id}`)
           .then((res) => {
             console.log(JSON.stringify(res.data)); // setDetailRecipe(res.data.data);
             // setIsLoading(false);
@@ -248,12 +243,7 @@ const RecipeDetail = () => {
         comment_text: form.comment,
       };
       if (token) {
-        axios
-          .post(`${process.env.REACT_APP_BACKEND_URL}/post/comment/`, body, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
+        api.post(`/post/comment/`, body)
           .then((res) => {
             input.current.value = "";
           })
@@ -310,10 +300,7 @@ const RecipeDetail = () => {
             )}
           </Title>
           <div className="position-relative mb-5 text-center">
-            <Image
-              src={`${process.env.REACT_APP_BACKEND_URL}/uploads/recipe/${detailRecipe.image}`}
-              alt={detailRecipe.title}
-            />
+            <Image src={assetUrl(`/uploads/recipe/${detailRecipe.image}`)} alt={detailRecipe.title} />
             <Icon>
               <Saved>
                 <img src={saved} alt="Bookmark" />

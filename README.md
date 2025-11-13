@@ -6,7 +6,6 @@
 </h1>
 
 ## Table of contents
-- [Live Demo](#Live-Demo)
 - [Getting Started](#Getting-Started)
 - [Description](#Description)
 - [Project Structure](#Project-Structure)
@@ -14,11 +13,6 @@
 - [Related Project](#Related-Project)
 - [Contributing](#Contributing)
 - [License](#License)
-
-
-## Live Demo
-
-Take a look the live demo here 👉 [https://slicing-foodtemplate.vercel.app/](https://slicing-foodtemplate.vercel.app/)
 
 
 ## Getting Started

@@ -1,20 +1,16 @@
-import axios from "axios";
+import api from "../api";
 import { useEffect, useState } from "react";
 
 const Coba = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
-      .then((response) => {
-        setList(response.data.results);
-        //   console.log(response.data.results);
-      })
-      .catch((err) => {
-        alert("error");
-      });
-  });
+    // use fetch via api or native fetch; using native fetch here to call external API
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
+      .then((response) => response.json())
+      .then((data) => setList(data.results))
+      .catch(() => alert("error"));
+  }, []);
 
   return (
     <>
